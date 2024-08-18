@@ -1,10 +1,27 @@
 import styled, { keyframes } from 'styled-components';
 
+const slideInBckCenter = keyframes`
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 export const HomeContainer = styled.div`
-  position: absolute;
-  top: 50%;
+  position: relative;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 25%);
+  width: max-content;
+  overflow: hidden;
+
+  @media only screen and (max-width: 400px) {
+    width: 300px;
+    height: 400px;
+  }
 `;
 
 export const FormContainer = styled.form`
@@ -14,9 +31,22 @@ export const FormContainer = styled.form`
   background-color: #86796e;
   padding: 30px 30px;
   border-radius: 20px;
+  animation: ${slideInBckCenter} 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media only screen and (max-width: 600px) {
     padding: 15px;
+  }
+`;
+
+export const HomeImage = styled.img.attrs((props) => ({
+  src: props.src,
+}))`
+  width: auto;
+  height: auto;
+
+  @media only screen and (max-width: 400px) {
+    width: 200px;
+    height: 200px;
   }
 `;
 
@@ -29,6 +59,7 @@ export const FormInputContainer = styled.div`
 
   @media only screen and (max-width: 600px) {
     margin: 15px 5px;
+    margin: 20px 5px;
   }
 `;
 

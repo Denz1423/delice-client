@@ -16,16 +16,19 @@ import {
   TotalContainer,
 } from './Summary.style';
 import { FadeIn } from '@/components/ui/Fade';
-import { selectCartTotal } from '@/services/state/CartSelectors';
+import {
+  selectCartProducts,
+  selectCartTotal,
+} from '@/services/state/CartSelectors';
 import { TotalCost } from '@/components/ui/Total';
 
 export default function Summary() {
   const imageSource = import.meta.env.VITE_AWS_IMAGES;
-  const cart = useAppSelector((state) => state.cart.cart);
-  const tableNumber = useAppSelector((state) => state.tableNumber);
-  const totalCart = useAppSelector(selectCartTotal);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const cart = useAppSelector(selectCartProducts);
+  const tableNumber = useAppSelector((state) => state.tableNumber);
+  const totalCart = useAppSelector(selectCartTotal);
 
   return (
     <FadeIn>
@@ -34,8 +37,8 @@ export default function Summary() {
       </center>
       <SummaryContainer>
         <ProductsContainer>
-          {cart && cart?.products.length !== 0 ? (
-            cart?.products.map((product) => {
+          {cart && cart.length !== 0 ? (
+            cart.map((product) => {
               return (
                 <ItemContainer key={product.id}>
                   <SummaryImageContainer>
@@ -99,7 +102,7 @@ export default function Summary() {
             </EmptyCartContainer>
           )}
         </ProductsContainer>
-        {cart && cart.products.length > 0 && (
+        {cart && cart.length > 0 && (
           <TotalContainer>
             <TotalCost>Total: ${totalCart}</TotalCost>
             <CheckoutButton

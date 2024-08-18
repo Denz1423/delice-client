@@ -6,7 +6,7 @@ interface CartState {
 }
 
 const getInitialCartState = (): CartState => {
-  let initialCart = null;
+  let initialCart: Cart | null = null;
   const cartFromStorage = localStorage.getItem('cart');
   if (cartFromStorage != null) {
     initialCart = JSON.parse(cartFromStorage);

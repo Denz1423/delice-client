@@ -7,6 +7,7 @@ import {
   Highlight,
   Bar,
   WhiteSpace,
+  HomeImage,
 } from './Home.style';
 import DeliceLogo from '/Delice-circle.png';
 import { HomeButton } from '@/components/button/Button.style';
@@ -38,7 +39,7 @@ export default function Home() {
   return (
     <HomeContainer>
       <FormContainer onSubmit={handleSubmit(onSubmit)}>
-        <img src={DeliceLogo} alt="DeliceLogo"></img>
+        <HomeImage src={DeliceLogo} alt="DeliceLogo"></HomeImage>
         <br />
         <FormInputContainer>
           <TableInput

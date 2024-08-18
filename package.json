@@ -10,7 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:staged": "eslint . --report-unused-disable-directives --max-warnings 0 --no-cache",
     "preview": "vite preview",
-    "prepare": "cd .. && husky client/.husky"
+    "prepare": "husky"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
