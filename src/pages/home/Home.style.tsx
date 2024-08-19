@@ -14,7 +14,7 @@ const slideInBckCenter = keyframes`
 export const HomeContainer = styled.div`
   position: relative;
   left: 50%;
-  transform: translate(-50%, 25%);
+  transform: translate(-50%, 20%);
   width: max-content;
   overflow: hidden;
 

@@ -1,5 +1,5 @@
 import { loadStripe } from '@stripe/stripe-js';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 import agent from '@/services/api/agent';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setCart } from '@/services/state/CartSlice';
@@ -13,16 +13,17 @@ export default function CheckoutWrapper() {
   const cart = useAppSelector((state) => state.cart.cart);
   const tableNumber = useAppSelector((state) => state.tableNumber);
   const clientSecret = useAppSelector((state) => state.cart.cart?.clientSecret);
-
-  const payload = useMemo(() => {
-    return { ...cart, tableNumber };
-  }, [cart, tableNumber]);
+  const cartRef = useRef(cart);
 
   useEffect(() => {
-    agent.Payments.createPaymentIntent(payload)
+    cartRef.current = cart;
+  }, [cart]);
+
+  useEffect(() => {
+    agent.Payments.createPaymentIntent({ ...cartRef.current, tableNumber })
       .then((response) => dispatch(setCart(response)))
       .catch((err) => console.log(err));
-  }, [dispatch, payload]);
+  }, [dispatch, tableNumber]);
 
   return (
     <>

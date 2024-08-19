@@ -6,6 +6,7 @@ import Header from '@/components/header/Header';
 import Summary from '@/pages/summary/Summary';
 import CheckoutWrapper from '@/pages/checkout/CheckoutWrapper';
 import CheckoutSuccess from '@/pages/checkout/CheckoutSuccess';
+import Order from '@/pages/order/Order';
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
   {
     path: 'success',
     element: <CheckoutSuccess />,
+  },
+  {
+    path: 'orders',
+    element: <Order />,
   },
   {
     path: '*',

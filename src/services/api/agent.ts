@@ -19,6 +19,7 @@ const Payments = {
 
 const Orders = {
   create: (cart: object) => requests.post('orders', cart),
+  getAll: () => requests.get('orders'),
 };
 
 const agent = {
