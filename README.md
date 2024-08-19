@@ -1,24 +1,15 @@
-![Delice](public/Delice-circle.png) 
-# Delice
+<div align="center">
+<img alt="Delice" src="public/Delice-circle.png">
+<h1 align="center">Delice</h1>
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  <p align="center">
+    Ordering application for cafe Delice. 
+    <br />
+    <a href=""><strong>View Demo</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Denz1423/delice-client">Client Repository</a>
+    ·
+    <a href="https://github.com/Denz1423/delice-api">API Repository</a>
+  </p>
+</div>
