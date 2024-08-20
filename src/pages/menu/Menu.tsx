@@ -15,16 +15,18 @@ export default function Menu() {
   const { productsLoaded } = useAppSelector((state) => state.menu);
 
   useEffect(() => {
-    if (!productsLoaded) dispatch(fetchProductsAsync());
+    if (!productsLoaded) {
+      dispatch(fetchProductsAsync());
+    }
   }, [dispatch, productsLoaded]);
 
   return (
     <FadeIn>
       <MenuContainer>
         <GridContainer>
-          {products.map((product) => {
-            return <Card key={product.id} product={product} />;
-          })}
+          {products.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
         </GridContainer>
       </MenuContainer>
     </FadeIn>
