@@ -5,9 +5,10 @@ import {
   ItemCount,
   StyledShoppingIcon,
 } from '@/components/cart/ShoppingIcon.style';
+import { selectCartProducts } from '@/services/state/CartSelectors';
 
 export default function ShoppingIcon() {
-  const cartProducts = useAppSelector((state) => state.cart.cart?.products);
+  const cartProducts = useAppSelector(selectCartProducts);
   const cartCount =
     cartProducts?.reduce(
       (total, product) => total + (product.quantity || 0),
