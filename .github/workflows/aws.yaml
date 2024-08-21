@@ -2,7 +2,9 @@ name: Deploy to Amazon S3
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -12,29 +14,29 @@ jobs:
       id-token: write
       contents: read
 
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Clean install dependencies and build client
-      run: |
-        npm i
-        npm run build
-      env:
-        VITE_STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
-        VITE_AWS_IMAGES: ${{ secrets.AWS_IMAGES }}
+      - name: Clean install dependencies and build client
+        run: |
+          npm ci
+          npm run build
+        env:
+          VITE_STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY }}
+          VITE_AWS_IMAGES: ${{ secrets.AWS_IMAGES }}
     
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-        aws-region: ${{ secrets.AWS_REGION }}
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Deploy to S3
-      uses: reggionick/s3-deploy@v4
-      with:
-        folder: dist
-        bucket: ${{ secrets.S3_BUCKET }}
-        bucket-region: ${{ secrets.AWS_REGION }}
-        private: true
-        delete-removed: true
+      - name: Deploy to S3
+        uses: reggionick/s3-deploy@v4
+        with:
+          folder: dist
+          bucket: ${{ secrets.S3_BUCKET }}
+          bucket-region: ${{ secrets.AWS_REGION }}
+          private: true
+          delete-removed: true
