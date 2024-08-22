@@ -18,6 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3 
+        with:
+          node-version: '21.7.1'
+
       - name: Clean install dependencies and build client
         run: |
           npm ci

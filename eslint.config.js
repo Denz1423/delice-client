@@ -21,6 +21,9 @@ export default [
     },
   },
   {
+    ignores: ['dist/**'],
+  },
+  {
     plugins: {
       react: reactPlugin,
       'react-hooks': pluginReactHooks,
