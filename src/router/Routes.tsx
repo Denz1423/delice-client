@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import App from '@/App';
 import Menu from '@/pages/menu/Menu';
 import Error404 from '@/pages/error/Error404';
@@ -8,7 +8,7 @@ import CheckoutWrapper from '@/pages/checkout/CheckoutWrapper';
 import CheckoutSuccess from '@/pages/checkout/CheckoutSuccess';
 import Order from '@/pages/order/Order';
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
