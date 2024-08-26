@@ -5,7 +5,7 @@
   <p align="center">
     An online menu & ordering application for cafe Delice. 
     <br />
-    <a href="https:delice.davisdjaja.com"><strong>View Demo</strong></a>
+    <a href="https:delice.davisdjaja.com/"><strong>View Demo</strong></a>
     <br />
     <p align="center">Or Scan the QR code below:</p>
     <img alt="deliceQRCode" src="src/assets/deliceQR.png">
