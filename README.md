@@ -20,9 +20,11 @@
 
 A full stack application built with React TypeScript and .NET and hosted using AWS cloud services. 
 
+Delice is an online ordering platform. As the hospitality industry shifts towards self-service solutions, Delice provides a streamlined way for customers to order directly from their smartphones. Customers can simply scan a QR code at their table to access the digital menu, place orders, and pay online, reducing the need for staff to take orders and allowing them to focus on other aspects of the business. The goal is to enhance the dining experience by making ordering more efficient and convenient.
+
 ### Built With
 
-- [![TechStack]((https://skillicons.dev/icons?i=react,dotnet,dynamodb,githubactions,aws)](https://skillicons.dev)
+[![TechStack](https://skillicons.dev/icons?i=react,dotnet,dynamodb,githubactions,aws)](https://skillicons.dev)
 
 ## Architecture
 ![AWS architecture diagram for delice](src/assets/delice-architecture.png)
