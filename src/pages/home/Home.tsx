@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/store/hooks';
 import { setTableNumber } from '@/services/state/HeaderSlice';
 import { clearCart } from '@/services/state/CartSlice';
+import Temp from '../temp/Temp';
 
 type FormInputs = {
   tableNumber: number;
@@ -37,34 +38,35 @@ export default function Home() {
   };
 
   return (
-    <HomeContainer>
-      <FormContainer onSubmit={handleSubmit(onSubmit)}>
-        <HomeImage src={DeliceLogo} alt="DeliceLogo"></HomeImage>
-        <br />
-        <FormInputContainer>
-          <TableInput
-            type="number"
-            required
-            {...register('tableNumber', {
-              required: 'Please enter your table number',
-              min: {
-                value: 1,
-                message: 'Table number does not exist (1-20 only)',
-              },
-              max: {
-                value: 20,
-                message: 'Table number does not exist (1-20 only)',
-              },
-            })}
-          />
-          <Highlight />
-          <Bar />
-          <TableLabel>Table Number</TableLabel>
-          {errors.tableNumber && <p>{errors.tableNumber?.message}</p>}
-        </FormInputContainer>
-        <WhiteSpace />
-        <HomeButton type="submit">Next</HomeButton>
-      </FormContainer>
-    </HomeContainer>
+    <Temp></Temp>
+    // <HomeContainer>
+    //   <FormContainer onSubmit={handleSubmit(onSubmit)}>
+    //     <HomeImage src={DeliceLogo} alt="DeliceLogo"></HomeImage>
+    //     <br />
+    //     <FormInputContainer>
+    //       <TableInput
+    //         type="number"
+    //         required
+    //         {...register('tableNumber', {
+    //           required: 'Please enter your table number',
+    //           min: {
+    //             value: 1,
+    //             message: 'Table number does not exist (1-20 only)',
+    //           },
+    //           max: {
+    //             value: 20,
+    //             message: 'Table number does not exist (1-20 only)',
+    //           },
+    //         })}
+    //       />
+    //       <Highlight />
+    //       <Bar />
+    //       <TableLabel>Table Number</TableLabel>
+    //       {errors.tableNumber && <p>{errors.tableNumber?.message}</p>}
+    //     </FormInputContainer>
+    //     <WhiteSpace />
+    //     <HomeButton type="submit">Next</HomeButton>
+    //   </FormContainer>
+    // </HomeContainer>
   );
 }
