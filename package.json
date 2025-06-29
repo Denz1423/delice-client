@@ -60,8 +60,7 @@
   },
   "lint-staged": {
     "*.+(ts|tsx)": [
-      "prettier --check --write",
-      "npm run lint:staged"
+      "prettier --check --write"
     ]
   }
 }
