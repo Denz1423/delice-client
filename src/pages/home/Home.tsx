@@ -38,12 +38,13 @@ export default function Home() {
 
   return (
     <HomeContainer>
-      <FormContainer onSubmit={handleSubmit(onSubmit)}>
+      <FormContainer onSubmit={handleSubmit(onSubmit)} noValidate>
         <HomeImage src={DeliceLogo} alt="DeliceLogo"></HomeImage>
         <br />
         <FormInputContainer>
           <TableInput
             type="number"
+            data-cy="tableInput"
             required
             {...register('tableNumber', {
               required: 'Please enter your table number',
@@ -60,10 +61,14 @@ export default function Home() {
           <Highlight />
           <Bar />
           <TableLabel>Table Number</TableLabel>
-          {errors.tableNumber && <p>{errors.tableNumber?.message}</p>}
+          {errors.tableNumber && (
+            <p data-cy="tableInput-error">{errors.tableNumber?.message}</p>
+          )}
         </FormInputContainer>
         <WhiteSpace />
-        <HomeButton type="submit">Next</HomeButton>
+        <HomeButton type="submit" data-cy="submit">
+          Next
+        </HomeButton>
       </FormContainer>
     </HomeContainer>
   );
