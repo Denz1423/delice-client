@@ -1,22 +1,33 @@
 import styled, { keyframes } from 'styled-components';
 
-const slideInBckCenter = keyframes`
+const blurPopIn = keyframes`
   0% {
-    transform: translateY(600px);
     opacity: 0;
+    transform: scale(0.95);
+    filter: blur(10px);
   }
-  100% {
-    transform: translateY(0);
+
+  60% {
     opacity: 1;
+    transform: scale(1.03);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
   }
 `;
 
 export const HomeContainer = styled.div`
-  position: relative;
+  position: fixed;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 20%);
+  transform: translate(-50%, -50%);
   width: max-content;
   overflow: hidden;
+  border-radius: 20px;
 
   @media only screen and (max-width: 400px) {
     width: 300px;
@@ -31,7 +42,7 @@ export const FormContainer = styled.form`
   background-color: #86796e;
   padding: 30px 30px;
   border-radius: 20px;
-  animation: ${slideInBckCenter} 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: ${blurPopIn} 1.2s ease-out forwards;
 
   @media only screen and (max-width: 600px) {
     padding: 15px;
@@ -177,4 +188,9 @@ export const Bar = styled.span`
 
 export const WhiteSpace = styled.span`
   margin: 5px;
+`;
+
+export const TableNumberError = styled.p`
+  color: #9b111e;
+  font-weight: 900;
 `;

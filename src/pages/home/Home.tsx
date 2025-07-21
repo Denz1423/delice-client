@@ -8,6 +8,7 @@ import {
   Bar,
   WhiteSpace,
   HomeImage,
+  TableNumberError,
 } from './Home.style';
 import DeliceLogo from '/Delice-circle.png';
 import { HomeButton } from '@/components/button/Button.style';
@@ -62,7 +63,9 @@ export default function Home() {
           <Bar />
           <TableLabel>Table Number</TableLabel>
           {errors.tableNumber && (
-            <p data-cy="tableInput-error">{errors.tableNumber?.message}</p>
+            <TableNumberError data-cy="tableInput-error">
+              {errors.tableNumber?.message}
+            </TableNumberError>
           )}
         </FormInputContainer>
         <WhiteSpace />
