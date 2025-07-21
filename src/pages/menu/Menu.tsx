@@ -23,7 +23,7 @@ export default function Menu() {
   return (
     <FadeIn>
       <MenuContainer>
-        <GridContainer>
+        <GridContainer data-cy="product-card">
           {products.map((product) => (
             <Card key={product.id} product={product} />
           ))}

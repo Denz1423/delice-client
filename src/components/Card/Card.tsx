@@ -21,14 +21,19 @@ export default function Card({ product }: Props) {
 
   return (
     <CardContainer>
-      <CardImage src={imageSource + product.imageUrl} alt={product.name} />
+      <CardImage
+        src={imageSource + product.imageUrl}
+        alt={product.name}
+        data-cy="card-img"
+      />
       <CardInformation>
-        <CardName>{product.name}</CardName>
-        <CardPrice>${product.price}</CardPrice>
+        <CardName data-cy="card-name">{product.name}</CardName>
+        <CardPrice data-cy="card-price">${product.price}</CardPrice>
       </CardInformation>
       <CardFooter>
         <ProductCardButton
           onClick={() => dispatch(addProductToCart({ product }))}
+          data-cy="card-button"
         >
           Add item
         </ProductCardButton>

@@ -77,7 +77,7 @@ export const FormInputContainer = styled.div`
 export const TableInput = styled.input`
   /* Remove the spinner for number inputs */
   appearance: textfield;
-  -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield;
 
   /* WebKit/Blink browsers */
   &::-webkit-outer-spin-button,
