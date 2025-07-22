@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { CheckoutButton, HomeButton } from '@/components/button/Button.style';
+import { CheckoutButton, HomeButton } from '@/components/Button/Button.style';
 import {
   addProductToCart,
   removeProductFromCart,

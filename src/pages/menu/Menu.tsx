@@ -8,25 +8,34 @@ import {
   productSelectors,
 } from '@/services/state/MenuSlice';
 import { FadeIn } from '@/components/ui/Fade';
+import SkeletonCard from '@/components/Skeleton/SkeletonCard';
 
 export default function Menu() {
   const dispatch = useAppDispatch();
   const products = useAppSelector(productSelectors.selectAll);
   const { productsLoaded } = useAppSelector((state) => state.menu);
+  const SKELETONLENGTH = 6;
 
   useEffect(() => {
     if (!productsLoaded) {
       dispatch(fetchProductsAsync());
+      // setTimeout(() => {
+      //   dispatch(fetchProductsAsync());
+      // }, 500);
     }
   }, [dispatch, productsLoaded]);
 
   return (
     <FadeIn>
       <MenuContainer>
-        <GridContainer data-cy="product-card">
-          {products.map((product) => (
-            <Card key={product.id} product={product} />
-          ))}
+        <GridContainer data-cy="product-grid">
+          {!productsLoaded
+            ? Array.from({ length: SKELETONLENGTH }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))
+            : products.map((product) => (
+                <Card key={product.id} product={product} />
+              ))}
         </GridContainer>
       </MenuContainer>
     </FadeIn>

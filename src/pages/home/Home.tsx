@@ -11,7 +11,7 @@ import {
   TableNumberError,
 } from './Home.style';
 import DeliceLogo from '/Delice-circle.png';
-import { HomeButton } from '@/components/button/Button.style';
+import { HomeButton } from '@/components/Button/Button.style';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/store/hooks';

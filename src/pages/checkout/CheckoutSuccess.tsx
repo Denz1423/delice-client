@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { clearCart } from '@/services/state/CartSlice';
 import { clearTableNumber } from '@/services/state/HeaderSlice';
 import { useNavigate } from 'react-router-dom';
-import { CheckoutButton } from '@/components/button/Button.style';
+import { CheckoutButton } from '@/components/Button/Button.style';
 import agent from '@/services/api/agent';
 
 export default function CheckoutSuccess() {

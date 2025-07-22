@@ -4,7 +4,7 @@ import {
   CartIconContainer,
   ItemCount,
   StyledShoppingIcon,
-} from '@/components/cart/ShoppingIcon.style';
+} from '@/components/Cart/ShoppingIcon.style';
 import { selectCartProducts } from '@/services/state/CartSelectors';
 
 export default function ShoppingIcon() {

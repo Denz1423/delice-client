@@ -6,18 +6,19 @@ export const CardContainer = styled.div`
   height: 480px;
   margin: 15px 15px;
   background-color: whitesmoke;
+  overflow: hidden;
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @media only screen and (min-width: 845px) and (max-width: 1400px) {
     width: 300px;
-    height: 340px;
+    height: 380px;
   }
 
   @media only screen and (max-width: 600px) {
     width: 300px;
-    height: 320px;
+    height: 330px;
   }
 `;
 
@@ -25,17 +26,24 @@ export const CardImage = styled.img.attrs((props) => ({
   src: props.src,
   alt: props.alt,
 }))`
-  width: 400px;
-  height: 350px;
+  width: 100%;
+  height: 325px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: transform 0.4s;
 
   @media only screen and (min-width: 845px) and (max-width: 1400px) {
     width: 300px;
-    height: 228px;
+    height: 240px;
   }
 
   @media only screen and (max-width: 600px) {
     width: 300px;
-    height: 200px;
+    height: 210px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 `;
 
@@ -44,6 +52,11 @@ export const CardInformation = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 15px 0;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
 `;
 
 export const CardName = styled.p`

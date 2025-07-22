@@ -1,6 +1,6 @@
 import { Product } from '@/models/Product';
 import { useAppDispatch } from '@/store/hooks';
-import { ProductCardButton } from '@/components/button/Button.style';
+import { ProductCardButton } from '@/components/Button/Button.style';
 import { addProductToCart } from '@/services/state/CartSlice';
 import {
   CardContainer,

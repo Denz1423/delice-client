@@ -3,9 +3,9 @@ import {
   LogoImage,
   IconContainer,
   TableNumberContainer,
-} from '@/components/header/Header.style';
+} from '@/components/Header/Header.style';
 import Delice from '@/assets/Delice.svg';
-import ShoppingIcon from '@/components/cart/ShoppingIcon';
+import ShoppingIcon from '@/components/Cart/ShoppingIcon';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@/store/hooks';
 

@@ -12,7 +12,7 @@ import {
 import { useAppSelector } from '@/store/hooks';
 import { useState } from 'react';
 import { Spinner } from '@/components/ui/Spinner';
-import { PaymentButton } from '@/components/button/Button.style';
+import { PaymentButton } from '@/components/Button/Button.style';
 import { selectCartTotal } from '@/services/state/CartSelectors';
 import { TotalCost } from '@/components/ui/Total';
 
