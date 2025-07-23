@@ -19,9 +19,6 @@ export default function Menu() {
   useEffect(() => {
     if (!productsLoaded) {
       dispatch(fetchProductsAsync());
-      // setTimeout(() => {
-      //   dispatch(fetchProductsAsync());
-      // }, 500);
     }
   }, [dispatch, productsLoaded]);
 

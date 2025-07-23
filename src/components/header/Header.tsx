@@ -15,14 +15,17 @@ export default function Header() {
 
   return (
     <>
-      <HeaderContainer>
+      <HeaderContainer data-cy="header-container">
         <LogoImage
           src={Delice}
           alt="Delice-logo"
           onClick={() => navigate(`/${tableNumber}/menu`)}
+          data-cy="delice-logo"
         />
         <IconContainer>
-          <TableNumberContainer>Table {tableNumber}</TableNumberContainer>
+          <TableNumberContainer data-cy="tableNumber-container">
+            Table {tableNumber}
+          </TableNumberContainer>
           <ShoppingIcon />
         </IconContainer>
       </HeaderContainer>

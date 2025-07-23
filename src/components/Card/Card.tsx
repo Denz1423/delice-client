@@ -24,16 +24,18 @@ export default function Card({ product }: Props) {
       <CardImage
         src={imageSource + product.imageUrl}
         alt={product.name}
-        data-cy="card-img"
+        data-cy={`card-${product.name}-img`}
       />
       <CardInformation>
-        <CardName data-cy="card-name">{product.name}</CardName>
-        <CardPrice data-cy="card-price">${product.price}</CardPrice>
+        <CardName data-cy={`card-${product.name}`}>{product.name}</CardName>
+        <CardPrice data-cy={`card-${product.name}-price`}>
+          ${product.price}
+        </CardPrice>
       </CardInformation>
       <CardFooter>
         <ProductCardButton
           onClick={() => dispatch(addProductToCart({ product }))}
-          data-cy="card-button"
+          data-cy={`card-${product.name}-button`}
         >
           Add item
         </ProductCardButton>
