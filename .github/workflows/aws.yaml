@@ -18,12 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Clean Vite artifacts
-        run: |
-          rm -rf node_modules
-          rm -rf dist
-          rm -rf .vite
-
       - name: Set up Node.js
         uses: actions/setup-node@v3 
         with:

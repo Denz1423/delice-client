@@ -33,24 +33,30 @@ export default function Summary() {
   return (
     <FadeIn>
       <center>
-        <h2>Cart Summary</h2>
+        <h2 data-cy="cartSummary-title">Cart Summary</h2>
       </center>
       <SummaryContainer>
         <ProductsContainer>
           {cart && cart.length !== 0 ? (
             cart.map((product) => {
               return (
-                <ItemContainer key={product.id}>
+                <ItemContainer
+                  key={product.id}
+                  data-cy={`summaryProduct-${product.name}-container`}
+                >
                   <SummaryImageContainer>
                     <img
                       src={imageSource + product.imageUrl}
                       alt={product.name}
+                      data-cy={`summaryProduct-${product.name}-img`}
                     />
                   </SummaryImageContainer>
 
                   <SummaryProductInformationContainer>
-                    <span>{product.name}</span>
-                    <span>
+                    <span data-cy={`summaryProduct-${product.name}`}>
+                      {product.name}
+                    </span>
+                    <span data-cy={`summaryProduct-${product.name}-price`}>
                       <strong>${product.price * product.quantity}</strong>
                     </span>
                     <QuantityContainer>
@@ -64,6 +70,7 @@ export default function Summary() {
                           dispatch(removeProductFromCart(product.id))
                         }
                         style={{ cursor: 'pointer' }}
+                        data-cy={`summaryProduct-${product.name}-remove`}
                       >
                         <path
                           fillRule="evenodd"
@@ -72,7 +79,9 @@ export default function Summary() {
                         />
                       </svg>
 
-                      <span>{product.quantity}</span>
+                      <span data-cy={`summaryProduct-${product.name}-quantity`}>
+                        {product.quantity}
+                      </span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -81,6 +90,7 @@ export default function Summary() {
                         height={30}
                         onClick={() => dispatch(addProductToCart({ product }))}
                         style={{ cursor: 'pointer' }}
+                        data-cy={`summaryProduct-${product.name}-add`}
                       >
                         <path
                           fillRule="evenodd"
@@ -95,8 +105,11 @@ export default function Summary() {
             })
           ) : (
             <EmptyCartContainer>
-              <span>Cart is currently empty!</span>
-              <HomeButton onClick={() => navigate(`/${tableNumber}/menu`)}>
+              <span data-cy="emptyCart-title">Cart is currently empty!</span>
+              <HomeButton
+                onClick={() => navigate(`/${tableNumber}/menu`)}
+                data-cy="home-button"
+              >
                 Browse Menu
               </HomeButton>
             </EmptyCartContainer>
@@ -104,9 +117,10 @@ export default function Summary() {
         </ProductsContainer>
         {cart && cart.length > 0 && (
           <TotalContainer>
-            <TotalCost>Total: ${totalCart}</TotalCost>
+            <TotalCost data-cy="cart-total">Total: ${totalCart}</TotalCost>
             <CheckoutButton
               onClick={() => navigate(`/${tableNumber}/checkout`)}
+              data-cy="checkout-button"
             >
               Checkout
             </CheckoutButton>
