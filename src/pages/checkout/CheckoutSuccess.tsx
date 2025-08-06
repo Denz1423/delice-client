@@ -5,6 +5,7 @@ import { clearTableNumber } from '@/services/state/HeaderSlice';
 import { useNavigate } from 'react-router-dom';
 import { CheckoutButton } from '@/components/Button/Button.style';
 import agent from '@/services/api/agent';
+import { Heading } from '@radix-ui/themes';
 
 export default function CheckoutSuccess() {
   const dispatch = useAppDispatch();
@@ -37,7 +38,9 @@ export default function CheckoutSuccess() {
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Payment Successful!</h1>
+      <Heading as="h2" style={{ padding: '1rem' }}>
+        Payment Successful!
+      </Heading>
       <p>
         Thank you for your purchase. Your order #{orderId} has been processed
         successfully.

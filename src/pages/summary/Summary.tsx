@@ -21,6 +21,7 @@ import {
   selectCartTotal,
 } from '@/services/state/CartSelectors';
 import { TotalCost } from '@/components/ui/Total';
+import { Heading } from '@radix-ui/themes';
 
 export default function Summary() {
   const imageSource = import.meta.env.VITE_AWS_IMAGES;
@@ -32,9 +33,15 @@ export default function Summary() {
 
   return (
     <FadeIn>
-      <center>
-        <h2 data-cy="cartSummary-title">Cart Summary</h2>
-      </center>
+      <Heading
+        as="h2"
+        align="center"
+        style={{ padding: '1rem' }}
+        data-cy="cartSummary-title"
+      >
+        Cart Summary
+      </Heading>
+
       <SummaryContainer>
         <ProductsContainer>
           {cart && cart.length !== 0 ? (
@@ -73,9 +80,9 @@ export default function Summary() {
                         data-cy={`summaryProduct-${product.name}-remove`}
                       >
                         <path
-                          fillRule="evenodd"
+                          fill-rule="evenodd"
                           d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z"
-                          clipRule="evenodd"
+                          clip-rule="evenodd"
                         />
                       </svg>
 
@@ -93,9 +100,9 @@ export default function Summary() {
                         data-cy={`summaryProduct-${product.name}-add`}
                       >
                         <path
-                          fillRule="evenodd"
-                          d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z"
-                          clipRule="evenodd"
+                          fill-rule="evenodd"
+                          d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+                          clip-rule="evenodd"
                         />
                       </svg>
                     </QuantityContainer>

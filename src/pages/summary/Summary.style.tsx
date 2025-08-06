@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const SummaryContainer = styled.div`
   display: flex;
-  justify-content: space-around;
-  /* width: 100%; */
 
   @media only screen and (max-width: 600px) {
-    display: block;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -14,7 +14,7 @@ export const ProductsContainer = styled.div`
   width: 60%;
 
   @media only screen and (max-width: 600px) {
-    width: 100%;
+    width: 95%;
   }
 `;
 
@@ -28,7 +28,6 @@ export const TotalContainer = styled.div`
   align-items: center;
 
   @media only screen and (max-width: 600px) {
-    width: 100vw;
     height: 200px;
     margin: 25px;
   }

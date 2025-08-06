@@ -15,9 +15,7 @@
     "cy:open": "cypress open"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/material": "^7.2.0",
+    "@radix-ui/themes": "^3.2.1",
     "@reduxjs/toolkit": "^2.2.6",
     "@stripe/react-stripe-js": "^2.7.3",
     "@stripe/stripe-js": "^4.1.0",
