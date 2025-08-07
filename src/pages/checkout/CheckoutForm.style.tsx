@@ -12,9 +12,10 @@ export const StripeContainer = styled.div`
 `;
 
 export const PaymentMessage = styled.div`
-  color: #ffffff;
+  color: #f4efe9;
   background-color: #d9534f;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 800;
   line-height: 20px;
   padding: 12px;
   text-align: center;
@@ -26,7 +27,7 @@ export const CloseButton = styled.button`
   position: absolute;
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: #f4efe9;
   font-size: 24px;
   cursor: pointer;
 

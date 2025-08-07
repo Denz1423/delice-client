@@ -21,31 +21,25 @@ const blurPopIn = keyframes`
 `;
 
 export const HomeContainer = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: max-content;
-  overflow: hidden;
-  border-radius: 20px;
-
-  @media only screen and (max-width: 400px) {
-    width: 300px;
-    height: 400px;
-  }
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #86796e;
-  padding: 30px 30px;
-  border-radius: 20px;
-  animation: ${blurPopIn} 1.2s ease-out forwards;
+  background-color: #a3b18a;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  animation: ${blurPopIn} 1.1s ease-out forwards;
 
   @media only screen and (max-width: 600px) {
-    padding: 15px;
+    padding: 1.5rem 1rem;
   }
 `;
 
@@ -55,9 +49,9 @@ export const HomeImage = styled.img.attrs((props) => ({
   width: auto;
   height: auto;
 
-  @media only screen and (max-width: 400px) {
-    width: 200px;
-    height: 200px;
+  @media only screen and (max-width: 600px) {
+    width: 300px;
+    height: 300px;
   }
 `;
 
@@ -66,31 +60,27 @@ export const FormInputContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin: 50px 20px;
+  margin: 3.5rem 1.5rem;
 
   @media only screen and (max-width: 600px) {
-    margin: 15px 5px;
-    margin: 20px 5px;
+    margin: 2rem 1rem;
   }
 `;
 
 export const TableInput = styled.input`
-  /* Remove the spinner for number inputs */
   appearance: textfield;
-  -moz-appearance: textfield;
 
-  /* WebKit/Blink browsers */
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  font-size: 16px;
-  color: #f8f3ed;
-  padding: 10px 10px 10px 5px;
+  font-size: 1rem;
+  color: #2f2f2f;
+  padding: 1rem 1rem 1rem 0.5rem;
   display: block;
-  width: 110px;
+  width: 130px;
   border: none;
   background: transparent;
   text-align: center;
@@ -101,39 +91,32 @@ export const TableInput = styled.input`
     text-align: center;
     cursor: default;
   }
-
-  @media only screen and (max-width: 600px) {
-    font-size: 14px;
-  }
 `;
 
 export const TableLabel = styled.label`
-  color: white;
-  font-size: 18px;
-  font-weight: normal;
-  text-align: center;
+  color: #7d7463;
+  font-size: 1.5rem;
   position: absolute;
   pointer-events: none;
   top: 10px;
   transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
 
   ${TableInput}:focus ~ &,
   ${TableInput}:valid ~ & {
     top: -20px;
-    font-size: 14px;
-    color: #f8f3ed;
+    font-size: 1rem;
+    color: #423124;
   }
 
   @media only screen and (max-width: 600px) {
+    font-size: 1rem;
     padding-bottom: 10px;
   }
 `;
 
 const inputHighlighter = keyframes`
   from {
-    background: #F8F3ED;
+    background: #423124;
   }
   to {
     width: 0;
@@ -166,7 +149,7 @@ export const Bar = styled.span`
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: #f8f3ed;
+    background: #423124;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -193,4 +176,5 @@ export const WhiteSpace = styled.span`
 export const TableNumberError = styled.p`
   color: #9b111e;
   font-weight: 900;
+  margin: 0.25rem 0;
 `;

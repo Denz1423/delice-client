@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
   width: 400px;
   height: 480px;
   margin: 15px 15px;
-  background-color: whitesmoke;
+  background-color: #e7dcd1;
   overflow: hidden;
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -13,12 +13,12 @@ export const CardContainer = styled.div`
 
   @media only screen and (min-width: 845px) and (max-width: 1400px) {
     width: 300px;
-    height: 380px;
+    height: 420px;
   }
 
   @media only screen and (max-width: 600px) {
     width: 300px;
-    height: 330px;
+    height: 370px;
   }
 `;
 
@@ -39,7 +39,8 @@ export const CardImage = styled.img.attrs((props) => ({
 
   @media only screen and (max-width: 600px) {
     width: 300px;
-    height: 210px;
+    height: 250px;
+    padding-bottom: 0.5rem;
   }
 
   &:hover {
@@ -52,7 +53,7 @@ export const CardInformation = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding: 1rem 0;
 
   @media only screen and (max-width: 600px) {
     padding: 0;
@@ -62,13 +63,15 @@ export const CardInformation = styled.div`
 export const CardName = styled.p`
   font-size: 20px;
   font-style: italic;
-  margin: 2px;
+  margin: 5px;
+  color: #423124;
 `;
 
 export const CardPrice = styled.p`
   font-size: 20px;
   font-style: italic;
   margin: 2px;
+  color: #423124;
 `;
 
 export const CardFooter = styled.div`

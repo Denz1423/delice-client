@@ -1,7 +1,30 @@
 import styled from 'styled-components';
 
+export const SummaryTitle = styled.h2`
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+`;
+
+export const GoBackContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 1rem;
+  cursor: pointer;
+  width: fit-content;
+
+  :hover {
+    text-decoration: underline;
+  }
+
+  & p {
+    padding: 0.5rem;
+  }
+`;
+
 export const SummaryContainer = styled.div`
   display: flex;
+  justify-content: center;
 
   @media only screen and (max-width: 600px) {
     width: 100%;
@@ -65,7 +88,6 @@ export const SummaryProductInformationContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 200px;
-  /* justify-content: space-around; */
   align-items: center;
 
   & span {
@@ -92,6 +114,5 @@ export const EmptyCartContainer = styled.div`
   & button {
     width: 250px;
     margin: 10px;
-    color: black;
   }
 `;

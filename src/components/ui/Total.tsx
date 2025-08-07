@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const TotalCost = styled.span`
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #333;
-  background-color: #f8f8f8;
+  color: #423124;
+  background-color: #f4efe9;
   padding: 8px 12px;
   border-radius: 4px;
   display: inline-block;

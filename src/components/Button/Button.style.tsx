@@ -1,30 +1,19 @@
 import styled from 'styled-components';
 
 export const HomeButton = styled.button`
-  appearance: none;
   background-color: transparent;
   border: 2px solid #423124;
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: #f8f3ed;
+  border-radius: 1rem;
+  color: #7d7463;
   cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: 600;
-  line-height: normal;
-  margin: 0;
   min-height: 60px;
-  min-width: 0;
-  outline: none;
-  padding: 16px 24px;
-  text-align: center;
+  padding: 1rem 1.5rem;
   text-decoration: none;
   transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-  user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
   width: 50%;
-  will-change: transform;
 
   &:disabled {
     pointer-events: none;
@@ -33,7 +22,6 @@ export const HomeButton = styled.button`
   &:hover {
     color: #f8f3ed;
     background-color: #423124;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
   }
 
@@ -44,38 +32,39 @@ export const HomeButton = styled.button`
 `;
 
 export const ProductCardButton = styled.button`
-  background-color: #423124;
+  background-color: #a3b18a;
   width: 100px;
-  color: white;
+  color: #423124;
   padding: 5px 15px;
   border-radius: 10px;
   border: 0;
   margin: 10px 0px;
   cursor: pointer;
   transition: ease background-color 250ms;
-  font-size: 16px;
+  font-size: 1rem;
   &:hover {
+    background-color: #8e9e79;
     transform: scale(1.2);
-    transition: 0.2s ease all;
+    transition: 0.3s ease all;
   }
 `;
 
 export const PaymentButton = styled.button`
-  background: #423124;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  border-radius: 4px;
+  background: #a3b18a;
+  color: #423124;
+  border-radius: 10px;
   border: 0;
   padding: 12px 16px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   display: block;
   transition: all 0.2s ease;
   box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
-  width: 290px;
+  width: 300px;
 
   &:hover {
+    background-color: #8e9e79;
     filter: contrast(140%);
   }
 
@@ -86,22 +75,22 @@ export const PaymentButton = styled.button`
 `;
 
 export const CheckoutButton = styled.button`
-  background-color: #423124;
-  color: #ffffff;
-  font-size: 16px;
+  background-color: #a3b18a;
+  color: #423124;
+  font-size: 1rem;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  width: 150px;
   border: none;
-  border-radius: 4px;
+  border-radius: 1rem;
   cursor: pointer;
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
-  display: inline-block;
-  text-align: center;
 
   &:hover {
-    background-color: #5b4c43;
+    background-color: #8e9e79;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 `;

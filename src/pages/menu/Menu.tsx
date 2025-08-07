@@ -30,9 +30,9 @@ export default function Menu() {
             ? Array.from({ length: SKELETONLENGTH }).map((_, index) => (
                 <SkeletonCard key={index} />
               ))
-            : products.map((product) => (
-                <Card key={product.id} product={product} />
-              ))}
+            : products
+                .sort((a, b) => a.id - b.id)
+                .map((product) => <Card key={product.id} product={product} />)}
         </GridContainer>
       </MenuContainer>
     </FadeIn>

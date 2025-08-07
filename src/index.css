@@ -8,9 +8,9 @@ body {
   font-family: 'Lato', sans-serif;
   overflow: scroll;
   scroll-behavior: smooth;
-  background-color: #f5f5f5;
-  /* background-color: #cecece; */
   overflow-x: hidden;
+  background-color: #f8f3ed;
+  color: #423124;
 }
 
 a {
@@ -20,6 +20,10 @@ a {
 #root {
   height: 100vh;
   width: 100vw;
+}
+
+button {
+  font-family: 'Lato', sans-serif;
 }
 
 .radix-themes {
@@ -41,8 +45,3 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-/* Colors
-#423124
-#86796E
-#F8F3ED */

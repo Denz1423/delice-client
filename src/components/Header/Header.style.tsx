@@ -4,7 +4,7 @@ export const HeaderContainer = styled.div`
   height: 100px;
   width: 100%;
   display: flex;
-  background-color: #86796e;
+  background-color: #a3b18a;
   justify-content: space-between;
   align-items: center;
   min-height: 75px;
@@ -16,7 +16,6 @@ export const LogoImage = styled.img.attrs((props) => ({
   width: 150px;
   height: 100px;
   margin: 5px 10px;
-  fill: white;
   cursor: pointer;
 `;
 
@@ -29,7 +28,7 @@ export const IconContainer = styled.div`
 `;
 
 export const TableNumberContainer = styled.span`
-  font-size: 24px;
-  color: #f8f4e1;
+  font-size: 1.5rem;
+  color: #423124;
   margin-right: 10px;
 `;
