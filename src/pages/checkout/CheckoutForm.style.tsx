@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const CheckoutContainer = styled.div`
+  height: 100%;
+`;
+
 export const StripeContainer = styled.div`
   display: flex;
   flex-direction: column;

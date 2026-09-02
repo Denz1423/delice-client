@@ -45,9 +45,7 @@ export default function CheckoutSuccess() {
         Thank you for your purchase. Your order #{orderId} has been processed
         successfully.
       </p>
-      <CheckoutButton onClick={handleHomeClick} className="home-button-back">
-        Return to Home
-      </CheckoutButton>
+      <CheckoutButton onClick={handleHomeClick}>Return to Home</CheckoutButton>
     </div>
   );
 }

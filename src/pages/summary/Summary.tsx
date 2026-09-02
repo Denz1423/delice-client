@@ -47,8 +47,8 @@ export default function Summary() {
           <path
             d="M6.85355 3.14645C7.04882 3.34171 7.04882 3.65829 6.85355 3.85355L3.70711 7H12.5C12.7761 7 13 7.22386 13 7.5C13 7.77614 12.7761 8 12.5 8H3.70711L6.85355 11.1464C7.04882 11.3417 7.04882 11.6583 6.85355 11.8536C6.65829 12.0488 6.34171 12.0488 6.14645 11.8536L2.14645 7.85355C1.95118 7.65829 1.95118 7.34171 2.14645 7.14645L6.14645 3.14645C6.34171 2.95118 6.65829 2.95118 6.85355 3.14645Z"
             fill="currentColor"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
           ></path>
         </svg>
         <p>Back to menu</p>
@@ -92,9 +92,9 @@ export default function Summary() {
                         data-cy={`summaryProduct-${product.name}-remove`}
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
 
@@ -112,9 +112,9 @@ export default function Summary() {
                         data-cy={`summaryProduct-${product.name}-add`}
                       >
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </QuantityContainer>
