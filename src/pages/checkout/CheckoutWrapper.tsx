@@ -5,6 +5,11 @@ import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setCart } from '@/services/state/CartSlice';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from '@/pages/checkout/CheckoutForm';
+import { LoadingPage } from '@/pages/checkout/CheckoutForm.style';
+import {
+  stripeAppearance,
+  stripeFonts,
+} from '@/pages/checkout/stripeAppearance';
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
@@ -15,6 +20,8 @@ export default function CheckoutWrapper() {
     if (!cart?.clientSecret) return undefined;
     return {
       clientSecret: cart.clientSecret,
+      appearance: stripeAppearance,
+      fonts: stripeFonts,
     };
   }, [cart?.clientSecret]);
 
@@ -30,15 +37,13 @@ export default function CheckoutWrapper() {
       .catch((err) => console.log(err));
   }, [dispatch, cart]);
 
+  if (!options) {
+    return <LoadingPage>Setting up checkout…</LoadingPage>;
+  }
+
   return (
-    <>
-      {!options ? (
-        <h2 style={{ textAlign: 'center' }}>Loading checkout...</h2>
-      ) : (
-        <Elements stripe={stripePromise} options={options}>
-          <CheckoutForm />
-        </Elements>
-      )}
-    </>
+    <Elements stripe={stripePromise} options={options}>
+      <CheckoutForm />
+    </Elements>
   );
 }

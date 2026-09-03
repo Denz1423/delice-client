@@ -1,32 +1,25 @@
-import { Theme } from '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
 import {
-  CardContainer,
-  CardInformation,
-  CardFooter,
+  Body,
+  CardRoot,
+  ImageBox,
+  MetaRow,
+  Shimmer,
+  SkeletonBar,
 } from '@/components/Card/Card.style';
-import { Skeleton } from '@radix-ui/themes';
 
 export default function SkeletonCard() {
   return (
-    <CardContainer data-cy="skeleton-card">
-      <Theme>
-        <Skeleton width="100%" height="325px" data-cy="skeleton-image" />
-
-        <CardInformation>
-          <Skeleton
-            width="60%"
-            height="28px"
-            style={{ marginBottom: 1 }}
-            data-cy="skeleton-name"
-          />
-          <Skeleton width="40%" height="24px" data-cy="skeleton-price" />
-        </CardInformation>
-
-        <CardFooter>
-          <Skeleton width="100px" height="36px" data-cy="skeleton-button" />
-        </CardFooter>
-      </Theme>
-    </CardContainer>
+    <CardRoot data-cy="skeleton-card" aria-hidden="true">
+      <ImageBox data-cy="skeleton-image">
+        <Shimmer />
+      </ImageBox>
+      <Body>
+        <SkeletonBar $w="65%" $h={22} data-cy="skeleton-name" />
+        <MetaRow>
+          <SkeletonBar $w="28%" $h={16} data-cy="skeleton-price" />
+          <SkeletonBar $w="78px" $h={30} $round data-cy="skeleton-button" />
+        </MetaRow>
+      </Body>
+    </CardRoot>
   );
 }
