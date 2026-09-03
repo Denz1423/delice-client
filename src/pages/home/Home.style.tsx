@@ -44,7 +44,7 @@ export const HomeContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 50px 30px 40px;
-  background-color: #efe8dd;
+  background-color: #eae9dc;
 
   @media only screen and (min-width: 768px) {
     align-items: center;
@@ -84,7 +84,7 @@ export const Tagline = styled.p`
   font-size: 14px;
   line-height: 1.6;
   text-align: center;
-  color: #7d7463;
+  color: #655c4e;
   animation: ${rise} 0.45s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
 
   @media only screen and (min-width: 768px) {
@@ -107,7 +107,7 @@ export const TableLabel = styled.span`
   font-family: ui-monospace, Menlo, monospace;
   font-size: 11px;
   letter-spacing: 0.2em;
-  color: #7d7463;
+  color: #655c4e;
 `;
 
 export const StepperRow = styled.div`
@@ -209,7 +209,7 @@ export const DigitPlaceholder = styled.span`
   font-family: 'Instrument Serif', serif;
   font-size: 76px;
   line-height: 76px;
-  color: rgba(66, 49, 36, 0.3);
+  color: rgba(66, 49, 36, 0.45);
 `;
 
 export const RangeHint = styled.span`
@@ -217,7 +217,7 @@ export const RangeHint = styled.span`
   font-family: ui-monospace, Menlo, monospace;
   font-size: 11px;
   letter-spacing: 0.14em;
-  color: #a09585;
+  color: #6b6252;
 
   .rh-long {
     display: none;
@@ -264,28 +264,10 @@ export const Helpers = styled.div`
   text-align: center;
 `;
 
-export const FriendsLine = styled.p`
-  display: none;
-  font-size: 13px;
-  color: #7d7463;
-  animation: ${fade} 0.6s 0.9s both;
-
-  @media only screen and (min-width: 768px) {
-    display: block;
-  }
-`;
-
-export const CodeLink = styled.span`
-  color: #423124;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(66, 49, 36, 0.35);
-  cursor: pointer;
-`;
-
 export const ScanLineMobile = styled.p`
   font-size: 13px;
   font-style: italic;
-  color: #a09585;
+  color: #6b6252;
 
   @media only screen and (min-width: 768px) {
     display: none;
@@ -296,7 +278,7 @@ export const ScanLineDesktop = styled.p`
   display: none;
   font-size: 13px;
   font-style: italic;
-  color: #a09585;
+  color: #6b6252;
   animation: ${fade} 0.6s 1.05s both;
 
   @media only screen and (min-width: 768px) {
@@ -323,7 +305,7 @@ export const KeypadSheet = styled.div`
   bottom: 0;
   z-index: 20;
   padding: 18px 24px calc(26px + env(safe-area-inset-bottom, 0px));
-  background: #efe8dd;
+  background: #eae9dc;
   border-top: 1px solid rgba(66, 49, 36, 0.25);
   outline: none;
   animation: ${slideSheet} 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;

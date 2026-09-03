@@ -5,14 +5,12 @@ import { useAppDispatch } from '@/store/hooks';
 import { setTableNumber } from '@/services/state/HeaderSlice';
 import { clearCart } from '@/services/state/CartSlice';
 import {
-  CodeLink,
   DigitCell,
   DigitPlaceholder,
   DigitRow,
   DigitStrip,
   DigitWindow,
   FormContainer,
-  FriendsLine,
   Helpers,
   HomeContainer,
   HomeImage,
@@ -270,12 +268,6 @@ export default function Home() {
         </SubmitButton>
 
         <Helpers>
-          <FriendsLine>
-            Joining friends?{' '}
-            <CodeLink role="button" tabIndex={0}>
-              Enter their table code
-            </CodeLink>
-          </FriendsLine>
           <ScanLineMobile>Wrong table? Just scan again.</ScanLineMobile>
           <ScanLineDesktop>
             Sitting in the cafe? Scan the code on your table to skip this step.
