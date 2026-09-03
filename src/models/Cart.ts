@@ -12,4 +12,5 @@ export interface Cart {
   tableNumber?: number;
   paymentIntentId?: string;
   clientSecret?: string;
+  note?: string;
 }

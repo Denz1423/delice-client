@@ -1,0 +1,18 @@
+[
+  { "id": "1", "name": "Tiramisu", "price": 12, "imageUrl": "Tiramisu.avif", "type": "Cake" },
+  { "id": "2", "name": "Chocolate Cake", "price": 10, "imageUrl": "ChocolateCake.avif", "type": "Cake" },
+  { "id": "3", "name": "Green Tea Cake", "price": 11, "imageUrl": "GreenTeaCake.avif", "type": "Cake" },
+  { "id": "4", "name": "Oreo Cake", "price": 12, "imageUrl": "OreoCake.avif", "type": "Cake" },
+  { "id": "5", "name": "Red Velvet Cake", "price": 13, "imageUrl": "RedVelvetCake.avif", "type": "Cake" },
+  { "id": "6", "name": "Carrot Cake", "price": 11, "imageUrl": "CarrotCake.avif", "type": "Cake" },
+  { "id": "7", "name": "Macaroon", "price": 13, "imageUrl": "Macaroon.avif", "type": "Cake" },
+  { "id": "8", "name": "Black Forest Cake", "price": 11, "imageUrl": "BlackForest.avif", "type": "Cake" },
+  { "id": "9", "name": "Cheese Cake", "price": 10, "imageUrl": "CheeseCake.avif", "type": "Cake" },
+  { "id": "10", "name": "Black Coffee", "price": 4, "imageUrl": "BlackCoffee.avif", "type": "Drink" },
+  { "id": "11", "name": "White Coffee", "price": 5, "imageUrl": "WhiteCoffee.avif", "type": "Drink" },
+  { "id": "12", "name": "Hot Chocolate", "price": 5, "imageUrl": "HotChocolate.avif", "type": "Drink" },
+  { "id": "13", "name": "Hot Tea", "price": 4, "imageUrl": "HotTea.avif", "type": "Drink" },
+  { "id": "14", "name": "Ice Tea", "price": 4, "imageUrl": "IceTea.avif", "type": "Drink" },
+  { "id": "15", "name": "Matcha Latte", "price": 5.5, "imageUrl": "MatchaLatte.avif", "type": "Drink" },
+  { "id": "16", "name": "Orange Juice", "price": 5, "imageUrl": "OrangeJuice.avif", "type": "Drink" }
+]

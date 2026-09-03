@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Cart } from '@/models/Cart';
 
 interface CartState {
@@ -56,8 +56,18 @@ export const cartSlice = createSlice({
       }
       localStorage.setItem('cart', JSON.stringify(state.cart));
     },
+    setCartNote: (state, action: PayloadAction<string>) => {
+      if (!state.cart) return;
+      state.cart.note = action.payload;
+      localStorage.setItem('cart', JSON.stringify(state.cart));
+    },
   },
 });
 
-export const { clearCart, addProductToCart, removeProductFromCart, setCart } =
-  cartSlice.actions;
+export const {
+  clearCart,
+  addProductToCart,
+  removeProductFromCart,
+  setCart,
+  setCartNote,
+} = cartSlice.actions;

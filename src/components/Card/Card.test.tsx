@@ -11,27 +11,35 @@ const product: Product = {
 };
 
 vi.mock('@/store/hooks', () => ({
-  useAppDispatch: vi.fn(),
+  useAppDispatch: () => vi.fn(),
+  useAppSelector: () => 0,
 }));
 
 describe('Card Component', () => {
   it('should render product details correctly', () => {
-    render(<Card product={product} />);
+    const { container } = render(<Card product={product} />);
 
-    expect(screen.getByAltText('Test Product')).toHaveAttribute(
+    expect(
+      container.querySelector('[data-cy="card-Test Product-img"]'),
+    ).toHaveAttribute(
       'src',
       import.meta.env.VITE_AWS_IMAGES + product.imageUrl,
     );
     expect(screen.getByText('Test Product')).toBeInTheDocument();
-    expect(screen.getByText('$13')).toBeInTheDocument();
+    expect(screen.getByText('$13.00')).toBeInTheDocument();
+    expect(screen.getByText('Add')).toBeInTheDocument();
   });
 
-  it('should handle missing product image', () => {
-    render(<Card product={product} />);
-
-    expect(screen.getByAltText('Test Product')).toHaveAttribute(
-      'src',
-      import.meta.env.VITE_AWS_IMAGES + 'test-product.jpg',
+  it('should show the category mark when the product has no image', () => {
+    const { container } = render(
+      <Card product={{ ...product, imageUrl: '' }} />,
     );
+
+    expect(
+      container.querySelector('[data-cy="card-Test Product-img"]'),
+    ).not.toBeInTheDocument();
+    expect(
+      container.querySelector('[data-cy="card-Test Product-fallback"]'),
+    ).toBeInTheDocument();
   });
 });
